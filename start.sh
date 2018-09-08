@@ -5,4 +5,4 @@ j2 /plone/instance/parts/instance/etc/zope.conf | sponge /plone/instance/parts/i
 cat /plone/instance/parts/instance/etc/zope.conf
 cat /plone/instance/parts/instance/etc/zope.conf|grep -i db
 
-exec /docker-entrypoint.sh start
+exec /plone/instance/bin/plonectl console
