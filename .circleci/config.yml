@@ -31,7 +31,7 @@ jobs:
       - run:
           name: Build NGING Docker image
           command: |
-            cd nginx ; docker build -t sahlinet/plone.nginx .
+            cd nginx ; docker build -t plone.nginx .
       - run:
           name: Save Docker image layer cache
           command: |
@@ -49,7 +49,7 @@ jobs:
             elif [ ! -z $CIRCLE_TAG ]; then
                docker login -u $DOCKER_USER -p $DOCKER_PASS
                docker tag app sahlinet/plone:$CIRCLE_TAG
-               docker tag sahlinet/plone.nginx sahlinet/plone.nginx:$CIRCLE_TAG
+               docker tag plone.nginx sahlinet/plone.nginx:$CIRCLE_TAG
                docker images
                docker push sahlinet/plone:$CIRCLE_TAG
                docker push sahlinet/plone.nginx:$CIRCLE_TAG
