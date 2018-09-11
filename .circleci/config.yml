@@ -29,6 +29,10 @@ jobs:
           command: |
             docker build --cache-from=app -t app .
       - run:
+          name: Build NGING Docker image
+          command: |
+            cd nginx ; docker build -t sahlinet/plone.nginx .
+      - run:
           name: Save Docker image layer cache
           command: |
             mkdir -p /caches
@@ -45,8 +49,10 @@ jobs:
             elif [ ! -z $CIRCLE_TAG ]; then
                docker login -u $DOCKER_USER -p $DOCKER_PASS
                docker tag app sahlinet/plone:$CIRCLE_TAG
+               docker tag sahlinet/plone.nginx sahlinet/nginx:$CIRCLE_TAG
                docker images
                docker push sahlinet/plone:$CIRCLE_TAG
+               docker push sahlinet/plone.nginx:$CIRCLE_TAG
             else
                echo "not pushing... "
                env
