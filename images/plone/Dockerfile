@@ -18,7 +18,7 @@ RUN sed -i -n '/.*old-files.*/!p' /plone/instance/parts/instance/etc/zope.conf
 
 # TODO: Create issue on https://github.com/collective/collective.disqus
 # Mixed Content: The page at 'https://plone.sahli.net/blog/bash-vs-python' was loaded over HTTPS, but requested an insecure script 'http://sahlinet.disqus.com/count.js'. This request has been blocked; the content must be served over HTTPS.
-RUN sed -i 's|http://|//|g' /plone/buildout-cache/eggs/collective.disqus-2.1-py2-none-any.ovo/collective/disqus/browser/disqus_summary_view.py
+RUN sed -i 's|http://|https://|g' /plone/buildout-cache/eggs/collective.disqus-2.1-py2-none-any.ovo/collective/disqus/browser/disqus_summary_view.py
 
 ENTRYPOINT ["bash", "-x", "/start.sh"]
 #ENTRYPOINT ["sleep", "3600"]
