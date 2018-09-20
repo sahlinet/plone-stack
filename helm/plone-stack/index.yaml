@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  plone-stack:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-20T17:01:14.091658567+02:00
+    description: A Helm chart for Plone Stack
+    digest: 95c37f1eadcf9a786b85d82facef04a97e6e48ee9b9783536e98e2543ff75162
+    name: plone-stack
+    urls:
+    - https://sahlinet.github.io/plone-stack/helm/plone-stack-0.1.10.tgz
+    version: 0.1.10
+generated: 2018-09-20T17:01:14.090407959+02:00

@@ -1,0 +1,57 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ template "plone.fullname" . }}-app
+  labels:
+    app: {{ template "plone.name" . }}
+    chart: {{ template "plone.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "plone.name" . }}-app
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "plone.name" . }}-app
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-http
+          image: "{{ .Values.http.image.repository }}:{{ .Values.http.image.tag }}"
+          imagePullPolicy: {{ .Values.app.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          env:
+            - name: FRONTEND_SERVER
+              value: {{ .Values.http.frontend_server }}
+            - name: SITE_ID
+              value: {{ .Values.http.site_id}}
+        - name: {{ .Chart.Name }}-app
+          image: "{{ .Values.app.image.repository }}:{{ .Values.app.image.tag }}"
+          imagePullPolicy: {{ .Values.db.image.pullPolicy }}
+          ports:
+            - name: app
+              containerPort: 8080
+              protocol: TCP
+          env:
+{{ toYaml .Values.db.env | indent 12 }}
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- with .Values.app.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}

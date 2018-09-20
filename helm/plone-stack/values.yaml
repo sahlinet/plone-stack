@@ -1,0 +1,81 @@
+# Default values for plone.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 2
+
+db:
+  image:
+    repository: philipsahli/postgresql-test
+    tag: latest
+    pullPolicy: Always
+  env: 
+    - name: DB_NAME
+      value: plone
+    - name: DB_USER
+      value: plone
+    - name: PASSWORD
+      value: plone
+  nodeSelector:  {}
+  #type: database
+
+http :
+  image:
+    repository: sahlinet/plone.nginx
+    tag: 0.1.5
+    pullPolicy: Always
+  nodeSelector: {}
+  frontend_server: plone.sahli.net
+  site_id: sahli-net
+
+app:
+  image:
+    repository: sahlinet/plone
+    tag: 0.1.7
+    pullPolicy: Always
+  nodeSelector: {}
+
+service:
+  type: NodePort
+  #nodePort: 30080
+  port: 8080
+
+ingress:
+   enabled: true 
+   annotations: 
+     kubernetes.io/ingress.class: nginx
+     kubernetes.io/tls-acme: "true"
+   path: /
+   hosts:
+     - plone.sahli.net
+   tls: 
+     - secretName: sahli-net-crt-secret
+       hosts:
+         - plone.sahli.net
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+
+tolerations: []
+
+affinity: {}
+
+#volumes:
+#  db:
+#     pv:
+#       - name: plone-volume1
+#         persistentVolumeClaim: 
+#            claimName: plone-volume1
+#     mount:
+#         - mountPath: "/var/lib/postgresql"
+#           name: plone-volume1
