@@ -42,7 +42,7 @@ jobs:
           paths:
             - /caches/app.tar
       - run: 
-          command: curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | sudo bash
+          command: curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
       - run:
           name: helm lint for minikube
           command: |
