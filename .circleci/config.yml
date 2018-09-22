@@ -66,6 +66,7 @@ workflows:
             branches:
               only:
                 - master
+                - gh-pages
   release:
     jobs:
       - build:
