@@ -11,7 +11,7 @@ jobs:
           name: Install dependencies
           command: |
             apk add --no-cache \
-              py-pip=9.0.0-r1
+              py-pip=9.0.0-r1 curl
             pip install \
               docker-compose==1.12.0
       - restore_cache:
@@ -25,11 +25,11 @@ jobs:
             set +o pipefail
             docker load -i /caches/app.tar | true
       - run:
-          name: Build application Docker image
+          name: Build application
           command: |
             cd images/plone ; docker build --cache-from=app -t app .
       - run:
-          name: Build NGINX Docker image
+          name: Build NGINX
           command: |
             cd images/nginx ; docker build -t plone.nginx .
       - run:
