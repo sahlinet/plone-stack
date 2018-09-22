@@ -2,7 +2,7 @@
 
 # https://medium.com/containerum/how-to-make-and-share-your-own-helm-package-50ae40f6c221
 
-rm plone-stack/*tgz
+git rm -f plone-stack/*tgz
 
 tag=`git describe --tags --abbrev=0`
 
@@ -12,7 +12,7 @@ helm package plone-stack
 mv plone-stack-${tag}.tgz plone-stack
 helm repo index plone-stack/ --url https://sahlinet.github.io/plone-stack/helm
 
-git add plone-stack/plone-stack-${tag}.tgz plone-stack/index.yaml plone-stack/Chart.yaml
+git add plone-stack/plone-stack-*.tgz plone-stack/index.yaml plone-stack/Chart.yaml
 
 exit 0 
   551  cat plone-stack

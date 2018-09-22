@@ -1,0 +1,28 @@
+---
+replicaCount: 1
+
+db:
+  env: 
+    - name: DB_NAME
+      value: plone
+    - name: DB_USER
+      value: plone
+    - name: PASSWORD
+      value: plone
+  nodeSelector:  {}
+
+service:
+  type: NodePort
+  #nodePort: 30080
+  port: 8080
+
+ingress:
+   enabled: false 
+
+resources: {}
+
+tolerations: []
+
+affinity: {}
+
+volumes: {}
