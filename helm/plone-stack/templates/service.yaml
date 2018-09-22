@@ -4,7 +4,7 @@ items:
 - kind: Service
   apiVersion: v1
   metadata:
-    name: {{ template "plone.fullname" . }}
+    name: {{ template "plone.fullname" . }}-app
     labels:
       app: {{ template "plone.name" . }}
       chart: {{ template "plone.chart" . }}

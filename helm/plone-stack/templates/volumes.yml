@@ -1,3 +1,4 @@
+{{ if (.Values.volumes.pv) }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -9,3 +10,4 @@ spec:
     requests:
       storage: 5Gi
   storageClassName: do-block-storage
+{{ end }}

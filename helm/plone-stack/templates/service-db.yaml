@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: db
+  name: {{ template "plone.fullname" . }}-db
   labels:
     app: {{ template "plone.name" . }}-db
     chart: {{ template "plone.chart" . }}

@@ -27,9 +27,11 @@ spec:
             - name: db
               containerPort: 5432
               protocol: TCP
+{{ if (.Values.volumes.db) }}
           volumeMounts:
             - mountPath: "/var/lib/postgresql"
               name: plone-volume1
+{{ end }}
           env:
 {{ toYaml .Values.db.env | indent 12 }}
           resources:
@@ -38,9 +40,11 @@ spec:
       nodeSelector:
 {{ toYaml . | indent 8 }}
     {{- end }}
+    {{ if (.Values.volumes) and (.Values.volumes.db.pv) }}
     {{- with .Values.volumes.db.pv }}
       volumes:
 {{ toYaml . | indent 8 }}
+    {{- end }}
     {{- end }}
     {{- with .Values.affinity }}
       affinity:
