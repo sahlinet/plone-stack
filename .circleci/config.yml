@@ -41,6 +41,12 @@ jobs:
           key: v1-{{ .Branch }}-{{ epoch }}
           paths:
             - /caches/app.tar
+      - run: 
+          command: curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | sudo bash
+      - run:
+          name: helm lint for minikube
+          command: |
+            cd helm; helm lint plone-stack -f plone-stack/values-minikube.yaml
       - deploy:
           name: Push application Docker image
           command: |
