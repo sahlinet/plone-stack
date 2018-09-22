@@ -1,40 +1,39 @@
 # Plone Stack
 
-Based on https://docs.plone.org/manage/docker/docs/container-images/custom.html
+## Batteries includes
 
-## Editing
+### Components
 
-Activate Markdown
+* Postgresql (from philipsahli/postgresql-test)
+* NGINX Frontend Webserver (for the site)
+* Plone Application
 
-## Title
+### Plone Eggs
 
-## Google Analytics
+* RelStorage
+* RelStorage[postgresql]
+* plonetheme.cleanblog
+* plonetheme.booster
+* plone.app.mosaic
+* collective.disqus (2.2)
+* zope.formlib
+* zope.processlifetime
 
-## Activate Discussions
 
-## Margins
+## How to run
 
-https://community.plone.org/t/mosaic-fluid-and-fixed-containers-in-one-layout/2540/3
+### docker-compose
 
-## Footer
+    git clone https://github.com/sahlinet/plone-stack.git 
+    cd plone-stack/images/plone
+    docker-compose up
 
-https://community.plone.org/t/change-the-footer/4776
+### Kubernetes
+    
+    helm repo add plone-stack https://sahlinet.github.io/plone-stack/helm/plone-stack
+    helm install plone-stack/plone-stack -n my-plone
 
-* disable link to "Site Map"
-   a) CMF Action at  /sahli-net/portal_actions/site_actions/sitemap
-   b) /sahli-net/@@actions-controlpanel
-* disable link to "Accessibility"
-   a) CMF Action at  /sahli-net/portal_actions/site_actions/accessibility
-   b) /sahli-net/@@actions-controlpanel
+### Minikube (for local testing)
 
-## Mark external links
+    helm install plone-stack/plone-stack -n my-plone -f https://raw.githubusercontent.com/sahlinet/plone-stack/gh-pages/helm/plone-stack/values-minikube.yaml
 
-Advanced Settings on Theme -> Mark special links
-
-## Twitter cards
-
-collective.twittercards
-
-## Tag cloud
-
-collective.vaporisation
