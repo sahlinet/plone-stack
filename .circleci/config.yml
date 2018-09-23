@@ -50,19 +50,23 @@ jobs:
       - deploy:
           name: Push application Docker image
           command: |
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                echo "not pushing for master"
             elif [ ! -z $CIRCLE_TAG ]; then
-               docker login -u $DOCKER_USER -p $DOCKER_PASS
                docker tag app sahlinet/plone:$CIRCLE_TAG
                docker tag plone.nginx sahlinet/plone.nginx:$CIRCLE_TAG
-               docker images
                docker push sahlinet/plone:$CIRCLE_TAG
                docker push sahlinet/plone.nginx:$CIRCLE_TAG
             else
-               echo "not pushing... "
+               echo "pushing tag dev"
+               docker tag app sahlinet/plone:dev
+               docker tag plone.nginx sahlinet/plone.nginx:dev
+               docker push sahlinet/plone:dev
+               docker push sahlinet/plone.nginx:dev
                env
             fi
+            docker images
 workflows:
   version: 2
   test:

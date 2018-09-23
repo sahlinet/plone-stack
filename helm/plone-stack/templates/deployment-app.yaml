@@ -40,6 +40,7 @@ spec:
               containerPort: 8080
               protocol: TCP
           env:
+            - DB_HOST: {{ template "plone.fullname" . }}-db
 {{ toYaml .Values.db.env | indent 12 }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
