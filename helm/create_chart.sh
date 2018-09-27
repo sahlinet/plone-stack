@@ -4,14 +4,17 @@
 
 git rm -f *tgz
 
-tag=`git describe --tags --abbrev=0`
+# tag=`git describe --tags --abbrev=0`
+tag="0.1.9"
 
 find plone-stack -exec grep -l "version:" {} \; 2>/dev/null| xargs sed -i "" -e "s/\(.*version:\).*/\1 ${tag}/g"
 
-helm package plone-stack
+helm package plone-stack --version $tag
 
-helm repo index plone-stack/ --url https://sahlinet.github.io/plone-stack/helm
+cp *tgz plone-stack/
 
-git add plone-stack-*.tgz plone-stack/index.yaml plone-stack/Chart.yaml
+helm repo index plone-stack/ --url https://sahlinet.github.io/plone-stack/helm/plone-stack
+
+git add plone-stack/*tgz plone-stack-*.tgz plone-stack/index.yaml plone-stack/Chart.yaml
 
 exit 0 
