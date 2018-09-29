@@ -17,4 +17,6 @@ helm repo index plone-stack/ --url https://sahlinet.github.io/plone-stack/helm/p
 
 git add plone-stack/*tgz plone-stack-*.tgz plone-stack/index.yaml plone-stack/Chart.yaml
 
+git commit -m "prepare version ${tag}"
+
 exit 0 
