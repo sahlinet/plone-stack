@@ -30,7 +30,9 @@ spec:
 {{ if (.Values.volumes.db) }}
           volumeMounts:
             - mountPath: "/var/lib/postgresql"
-              name: plone-volume1
+              {{- with index .Values.volumes.db.pv 0 }}
+              name: {{ .name }}
+              {{- end }}
 {{ end }}
           env:
 {{ toYaml .Values.db.env | indent 12 }}

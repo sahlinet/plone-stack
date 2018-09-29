@@ -1,8 +1,8 @@
-{{ if (.Values.volumes.pv) }}
+{{ if (.Values.volumes.d) }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: plone-volume1
+  name: {{ template "plone.fullname" . }}-claim
 spec:
   accessModes:
   - ReadWriteOnce
