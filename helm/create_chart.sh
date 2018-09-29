@@ -5,7 +5,7 @@
 git rm -f *tgz
 
 # tag=`git describe --tags --abbrev=0`
-tag="0.1.9"
+tag="0.1.10"
 
 find plone-stack -exec grep -l "version:" {} \; 2>/dev/null| xargs sed -i "" -e "s/\(.*version:\).*/\1 ${tag}/g"
 
