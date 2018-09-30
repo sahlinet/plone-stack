@@ -1,5 +1,9 @@
 apiVersion: v1
-appVersion: "1.0"
+appVersion: "5.1"
 description: A Helm chart for Plone Stack
+maintainers:
+  - name: Philip Sahli
+    email: philip@sahli.net
+    url: https://twitter.com/philipsahli
 name: plone-stack
 version: 0.1.10
