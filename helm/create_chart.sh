@@ -1,11 +1,10 @@
-# sed version
+#!env bash -xe
 
 # https://medium.com/containerum/how-to-make-and-share-your-own-helm-package-50ae40f6c221
 
 git rm -f *tgz
 
-# tag=`git describe --tags --abbrev=0`
-tag="0.1.10"
+tag=$1
 
 find plone-stack -exec grep -l "version:" {} \; 2>/dev/null| xargs sed -i "" -e "s/\(.*version:\).*/\1 ${tag}/g"
 
