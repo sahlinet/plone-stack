@@ -3,15 +3,15 @@ entries:
   plone-stack:
   - apiVersion: v1
     appVersion: "5.1"
-    created: 2018-09-30T08:11:45.151806342+02:00
+    created: 2018-09-30T15:05:24.021601495+02:00
     description: A Helm chart for Plone Stack
-    digest: a8a1e11f194c0db26c9d4ebf420a45be971938d0c8a3c67060681e879aed5e7d
+    digest: cd3638bc600bc2dba3e13fa597d7c99da196ec18aaa2a36a084cf1e0dee91b45
     maintainers:
     - email: philip@sahli.net
       name: Philip Sahli
       url: https://twitter.com/philipsahli
     name: plone-stack
     urls:
-    - https://sahlinet.github.io/plone-stack/helm/plone-stack/plone-stack-0.1.10.tgz
-    version: 0.1.10
-generated: 2018-09-30T08:11:45.149821305+02:00
+    - https://sahlinet.github.io/plone-stack/helm/plone-stack/plone-stack-0.1.11.tgz
+    version: 0.1.11
+generated: 2018-09-30T15:05:24.020806839+02:00
