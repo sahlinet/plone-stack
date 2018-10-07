@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### 
 - Add rapido.plone to docker image [@philipsahli].
+- Build all branches on CircleCI [@philipsahli].
 
 ## [0.1.11] - 2018-09-30
 ### Added
