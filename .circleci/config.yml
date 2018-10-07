@@ -58,13 +58,14 @@ jobs:
                docker tag plone.nginx sahlinet/plone.nginx:$CIRCLE_TAG
                docker push sahlinet/plone:$CIRCLE_TAG
                docker push sahlinet/plone.nginx:$CIRCLE_TAG
-            else
-               echo "pushing tag dev"
+            elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
                docker tag app sahlinet/plone:dev
                docker tag plone.nginx sahlinet/plone.nginx:dev
                docker push sahlinet/plone:dev
                docker push sahlinet/plone.nginx:dev
                env
+            else
+               echo "not pushing for ${CIRCLE_BRANCH}"
             fi
             docker images
 workflows:
@@ -73,12 +74,6 @@ workflows:
     jobs:
       - build:
           context: docker-hub
-          filters:
-            branches:
-              only:
-                - master
-                - develop
-                - gh-pages
   release:
     jobs:
       - build:
