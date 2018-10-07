@@ -6,7 +6,7 @@
 
 * Postgresql (from philipsahli/postgresql-test)
 * NGINX Frontend Webserver (for the site)
-* Plone Application
+* Plone 5.1.2
 
 ### Plone Eggs
 
