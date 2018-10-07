@@ -2,7 +2,7 @@
 
 # https://medium.com/containerum/how-to-make-and-share-your-own-helm-package-50ae40f6c221
 
-git rm -f *tgz
+# git rm -f *tgz
 
 tag=$1
 
