@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Nothing yet.
 
+## [0.1.13] - 2018-10-14
+### Fixed
+- DB Volume not created
+### Changed
+- Set client_max_body_size to 30M
+
 ## [0.1.12] - 2018-10-07
 ### Added
 - Add rapido.plone to docker image [@philipsahli].
