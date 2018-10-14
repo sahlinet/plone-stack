@@ -1,4 +1,4 @@
-{{ if (.Values.volumes.d) }}
+{{ if (.Values.volumes.db) }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
