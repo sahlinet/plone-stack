@@ -15,8 +15,8 @@ cp *tgz plone-stack/
 
 helm repo index plone-stack/ --url https://sahlinet.github.io/plone-stack/helm/plone-stack
 
-#git add plone-stack/*tgz plone-stack-*.tgz plone-stack/index.yaml plone-stack/Chart.yaml
+git add plone-stack/*tgz plone-stack-*.tgz plone-stack/index.yaml plone-stack/Chart.yaml plone-stack/values.yaml
 
-#git commit -m "prepare version ${tag}"
+git commit -m "prepare version ${tag}"
 
 exit 0 
