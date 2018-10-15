@@ -35,5 +35,5 @@
 
 ### Minikube (for local testing)
 
-    helm install plone-stack/plone-stack -n my-plone -f https://raw.githubusercontent.com/sahlinet/plone-stack/gh-pages/helm/plone-stack/values-minikube.yaml
+    helm install plone-stack/plone-stack -n my-plone -f https://raw.githubusercontent.com/sahlinet/plone-stack/master/helm/plone-stack/values-minikube.yaml
 
