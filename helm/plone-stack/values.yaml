@@ -7,7 +7,7 @@ replicaCount: 2
 db:
   image:
     repository: philipsahli/postgresql-test
-    tag: 0.1.15
+    tag: 0.1.16
     pullPolicy: Always
   env: 
     - name: DB_NAME
@@ -22,7 +22,7 @@ db:
 http :
   image:
     repository: sahlinet/plone.nginx
-    tag: 0.1.15
+    tag: 0.1.16
     pullPolicy: Always
   nodeSelector: {}
   frontend_server: plone.sahli.net
@@ -31,7 +31,7 @@ http :
 app:
   image:
     repository: sahlinet/plone
-    tag: 0.1.15
+    tag: 0.1.16
     pullPolicy: Always
   nodeSelector: {}
 
