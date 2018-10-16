@@ -11,11 +11,11 @@ find plone-stack -exec grep -l "tag:" {} \; 2>/dev/null| xargs sed -i "" -e "s/\
 
 helm package plone-stack --version $tag
 
-cp *tgz plone-stack/
+#cp *tgz plone-stack/
 
-helm repo index plone-stack/ --url https://sahlinet.github.io/plone-stack/helm/plone-stack
+helm repo index . --url https://sahlinet.github.io/plone-stack/helm/
 
-git add plone-stack/*tgz plone-stack-*.tgz plone-stack/index.yaml plone-stack/Chart.yaml plone-stack/values.yaml
+git add *tgz index.yaml plone-stack/Chart.yaml plone-stack/values.yaml
 
 git commit -m "prepare version ${tag}"
 
