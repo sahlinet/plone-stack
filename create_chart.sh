@@ -15,7 +15,7 @@ helm package plone-stack --version $tag
 
 helm repo index . --url https://sahlinet.github.io/plone-stack/helm/
 
-git add *tgz index.yaml plone-stack/Chart.yaml plone-stack/values.yaml
+git add *tgz index.yaml plone-stack/Chart.yaml plone-stack/values.yaml ../.bumpversion.cfg
 
 git commit -m "prepare version ${tag}"
 
