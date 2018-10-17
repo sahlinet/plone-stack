@@ -33,6 +33,13 @@ jobs:
           command: |
             cd images/nginx ; docker build -t plone.nginx .
       - run:
+          name: Run images with docker-compose
+          command: |
+            cd images 
+            docker-compose up -d
+            sleep 30
+            docker-compose ps
+      - run:
           name: Save Docker image layer cache
           command: |
             mkdir -p /caches
