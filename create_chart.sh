@@ -2,8 +2,6 @@
 
 # https://medium.com/containerum/how-to-make-and-share-your-own-helm-package-50ae40f6c221
 
-# git rm -f *tgz
-
 cd helm
 
 tag=$1
@@ -20,5 +18,7 @@ helm repo index . --url https://sahlinet.github.io/plone-stack/helm/
 git add *tgz index.yaml plone-stack/Chart.yaml plone-stack/values.yaml
 
 git commit -m "prepare version ${tag}"
+
+git tag $tag
 
 exit 0 

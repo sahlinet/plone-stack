@@ -19,13 +19,15 @@ db:
   nodeSelector:  {}
   #type: database
 
-http :
+http:
   image:
     repository: sahlinet/plone.nginx
     tag: 0.1.20
     pullPolicy: Always
   nodeSelector: {}
   frontend_server: plone.sahli.net
+  frontend_port: 443
+  frontend_scheme: https
   site_id: sahli-net
 
 app:

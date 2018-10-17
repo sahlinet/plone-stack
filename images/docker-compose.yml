@@ -1,0 +1,29 @@
+db:
+  image: philipsahli/postgresql-test
+  ports:
+   - "5432"
+  environment:
+   - DB_NAME=plone
+   - DB_USER=plone
+   - PASSWORD=plonepw
+   - SUPERUSER=true
+nginx:
+  build: ./nginx
+  ports:
+      - "8000:80"
+  links:
+   - plone
+  environment:
+   - FRONTEND_SERVER=192.168.1.2
+   - SITE_ID=Plone
+plone:
+  build: ./plone
+  ports:
+      - "8888:8080"
+  environment:
+   - DB_NAME=plone
+   - DB_USER=plone
+   - PASSWORD=plonepw
+   - SUPERUSER=true
+  links:
+   - db

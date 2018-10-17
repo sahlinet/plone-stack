@@ -1,6 +1,11 @@
 ---
 replicaCount: 1
 
+http:
+  frontend_server: minikube
+  frontend_port: 8088
+  frontend_scheme: http
+
 db:
   env: 
     - name: DB_NAME

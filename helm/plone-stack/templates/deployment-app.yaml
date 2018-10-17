@@ -30,6 +30,10 @@ spec:
           env:
             - name: FRONTEND_SERVER
               value: {{ .Values.http.frontend_server }}
+            - name: FRONTEND_PORT
+              value: {{ .Values.http.frontend_port}}
+            - name: FRONTEND_SCHEME
+              value: {{ .Values.http.frontend_scheme}}
             - name: SITE_ID
               value: {{ .Values.http.site_id}}
         - name: {{ .Chart.Name }}-app
