@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Build application
           command: |
-            cd images/plone ; docker build --no-cache --pull -t app .
+            cd images/plone ; docker build --cache-from=app --pull -t app .
       - run:
           name: Build NGINX
           command: |
@@ -39,6 +39,7 @@ jobs:
             docker-compose build --pull
             docker-compose up -d
             sleep 30
+            docker-compose up -d plone
             docker-compose ps
       - run:
           name: Save Docker image layer cache
