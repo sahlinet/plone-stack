@@ -27,16 +27,16 @@ jobs:
       - run:
           name: Build application
           command: |
-            cd images/plone ; docker build --cache-from=app -t app .
+            cd images/plone ; docker build --pull --cache-from=app -t app .
       - run:
           name: Build NGINX
           command: |
-            cd images/nginx ; docker build -t plone.nginx .
+            cd images/nginx ; docker build --pull -t plone.nginx .
       - run:
           name: Run images with docker-compose
           command: |
             cd images 
-            docker-compose build
+            docker-compose build --pull
             docker-compose up -d
             sleep 30
             docker-compose ps
