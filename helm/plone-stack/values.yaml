@@ -9,7 +9,7 @@ db:
     repository: philipsahli/postgresql-test
     tag: latest
     pullPolicy: Always
-  env: 
+  env:
     - name: DB_NAME
       value: plone
     - name: DB_USER
@@ -36,6 +36,9 @@ app:
     tag: 0.2.2
     pullPolicy: Always
   nodeSelector: {}
+  env:
+    - name: DEBUG
+      value: "false"
 
 service:
   type: NodePort

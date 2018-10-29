@@ -21,6 +21,7 @@ plone:
   ports:
       - "8888:8080"
   environment:
+   - DEBUG=true
    - DB_NAME=plone
    - DB_USER=plone
    - PASSWORD=plonepw
