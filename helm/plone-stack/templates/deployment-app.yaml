@@ -46,6 +46,7 @@ spec:
           env:
             - name: DB_HOST
               value: {{ template "plone.fullname" . }}-db
+{{ toYaml .Values.app.env | indent 12 }}
 {{ toYaml .Values.db.env | indent 12 }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}

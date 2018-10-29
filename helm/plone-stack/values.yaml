@@ -9,7 +9,7 @@ db:
     repository: philipsahli/postgresql-test
     tag: latest
     pullPolicy: Always
-  env: 
+  env:
     - name: DB_NAME
       value: plone
     - name: DB_USER
@@ -22,7 +22,7 @@ db:
 http:
   image:
     repository: sahlinet/plone.nginx
-    tag: 0.2.2
+    tag: 0.2.3-dev
     pullPolicy: Always
   nodeSelector: {}
   frontend_server: plone.sahli.net
@@ -33,9 +33,12 @@ http:
 app:
   image:
     repository: sahlinet/plone
-    tag: 0.2.2
+    tag: 0.2.3-dev
     pullPolicy: Always
   nodeSelector: {}
+  env:
+    - name: DEBUG
+      value: "false"
 
 service:
   type: NodePort
