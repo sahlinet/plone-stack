@@ -57,7 +57,6 @@ jobs:
     docker:
       - image: docker:17.09.0-ce-git
     steps:
-      - checkout
       - run:
           name: helm lint for minikube
           command: |
