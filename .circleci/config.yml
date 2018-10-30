@@ -87,14 +87,12 @@ workflows:
   version: 2
   test:
     jobs:
-      - build
       - test:
           requires: 
             - build
           context: docker-hub
   release:
     jobs:
-      - build
       - test:
           requires: 
             - build
