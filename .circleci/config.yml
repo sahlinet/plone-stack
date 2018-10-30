@@ -88,11 +88,15 @@ workflows:
     jobs:
       - build
       - test:
+          requires: 
+            - build
           context: docker-hub
   release:
     jobs:
       - build
       - test:
+          requires: 
+            - build
           context: docker-hub
           filters:
             branches:
