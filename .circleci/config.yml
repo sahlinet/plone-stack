@@ -52,6 +52,11 @@ jobs:
             - /caches/app.tar
       - run: 
           command: curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | sh
+  test:
+    working_directory: /app
+    docker:
+      - image: docker:17.09.0-ce-git
+    steps:
       - run:
           name: helm lint for minikube
           command: |
@@ -81,11 +86,13 @@ workflows:
   version: 2
   test:
     jobs:
-      - build:
+      - build
+      - test:
           context: docker-hub
   release:
     jobs:
-      - build:
+      - build
+      - test:
           context: docker-hub
           filters:
             branches:
