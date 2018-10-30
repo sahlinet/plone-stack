@@ -61,6 +61,11 @@ jobs:
           name: helm lint for minikube
           command: |
             cd helm; helm lint plone-stack -f plone-stack/values-minikube.yaml
+  release:
+    working_directory: /app
+    docker:
+      - image: docker:17.09.0-ce-git
+    steps:
       - deploy:
           name: Push application Docker image
           command: |
@@ -84,17 +89,15 @@ jobs:
             docker images
 workflows:
   version: 2
-  test:
+  build-test-release:
     jobs:
+      - build
       - test:
           requires: 
             - build
-          context: docker-hub
-  release:
-    jobs:
-      - test:
+      - release:
           requires: 
-            - build
+            - test
           context: docker-hub
           filters:
             branches:
