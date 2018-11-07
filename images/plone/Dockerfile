@@ -1,4 +1,4 @@
-FROM plone:5
+FROM plone:5.1.4
 
 RUN pip install j2cli
 RUN apt-get update 
