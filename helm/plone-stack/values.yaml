@@ -22,7 +22,7 @@ db:
 http:
   image:
     repository: sahlinet/plone.nginx
-    tag: 0.2.3
+    tag: 0.3.0-dev
     pullPolicy: Always
   nodeSelector: {}
   frontend_server: plone.sahli.net
@@ -33,7 +33,7 @@ http:
 app:
   image:
     repository: sahlinet/plone
-    tag: 0.2.3
+    tag: 0.3.0-dev
     pullPolicy: Always
   nodeSelector: {}
   env:
