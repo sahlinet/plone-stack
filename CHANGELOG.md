@@ -7,24 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] 2018-11-13
+### Changed
+- Use Plone Dockerimage 5.1.4. [@philipsahli]
+
 ## [0.2.3] 2018-10-30
 ### Added
-### 
-- Start plone in development mode if DEBUG variable is true [philipsahli]
+- Start plone in development mode if DEBUG variable is true [@philipsahli]
 
 ## [0.2.2]
 ### Added
-### 
-- Add proxy-body-size with 50m default value to ingress. [philipsahli]
+- Add proxy-body-size with 50m default value to ingress. [@philipsahli]
 
 ## [0.2.1]
 ### Changed
-### 
-- Imporove build pipeline. [philipsahli]
+- Imporove build pipeline. [@philipsahli]
 
 ## [0.2.0]
 ### Fixed
-- Make RONTEND_SCHEME and FRONTEND_PORT configurable. [philipsahli]
+- Make RONTEND_SCHEME and FRONTEND_PORT configurable. [@philipsahli]
 
 ## [0.1.21]
 ### Fixed
