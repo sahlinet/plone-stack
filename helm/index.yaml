@@ -3,7 +3,20 @@ entries:
   plone-stack:
   - apiVersion: v1
     appVersion: "5.1"
-    created: 2018-11-07T06:48:30.668394315+01:00
+    created: 2018-11-13T06:53:01.162128206+01:00
+    description: A Helm chart for Plone Stack
+    digest: 058b17feb4002057c32f0743597dbaaa34fbf410cbdc9b4329beef25a1beddd8
+    maintainers:
+    - email: philip@sahli.net
+      name: Philip Sahli
+      url: https://twitter.com/philipsahli
+    name: plone-stack
+    urls:
+    - https://sahlinet.github.io/plone-stack/helm/plone-stack-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v1
+    appVersion: "5.1"
+    created: 2018-11-13T06:53:01.161746496+01:00
     description: A Helm chart for Plone Stack
     digest: 06ffdc8071346b6bdbac2c30a29352cde55dab6bc9609e8047cb757950644b2c
     maintainers:
@@ -16,7 +29,7 @@ entries:
     version: 0.3.0-dev
   - apiVersion: v1
     appVersion: "5.1"
-    created: 2018-11-07T06:48:30.667980994+01:00
+    created: 2018-11-13T06:53:01.161362227+01:00
     description: A Helm chart for Plone Stack
     digest: ffbf6d01b9b0712b912f60b0fedeb814ee42f3ad435b6e93353bd62a2c3d1426
     maintainers:
@@ -29,7 +42,7 @@ entries:
     version: 0.2.3
   - apiVersion: v1
     appVersion: "5.1"
-    created: 2018-11-07T06:48:30.667442857+01:00
+    created: 2018-11-13T06:53:01.160968699+01:00
     description: A Helm chart for Plone Stack
     digest: 9e83d5db92b4b34403539a8b8dbd86961bac8232eb417d7ef1f956453605a184
     maintainers:
@@ -42,7 +55,7 @@ entries:
     version: 0.2.3-dev
   - apiVersion: v1
     appVersion: "5.1"
-    created: 2018-11-07T06:48:30.666880969+01:00
+    created: 2018-11-13T06:53:01.160577015+01:00
     description: A Helm chart for Plone Stack
     digest: d62deaf2ed75be7282c159e59d65033dc9a6f7c46f48d71818301f3655e95083
     maintainers:
@@ -55,7 +68,7 @@ entries:
     version: 0.2.2
   - apiVersion: v1
     appVersion: "5.1"
-    created: 2018-11-07T06:48:30.666339055+01:00
+    created: 2018-11-13T06:53:01.160196699+01:00
     description: A Helm chart for Plone Stack
     digest: 854d4576f370d00405b64de2bb8d83ff59eec1562206e02c549c1a4b29e899dc
     maintainers:
@@ -68,7 +81,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: "5.1"
-    created: 2018-11-07T06:48:30.665750671+01:00
+    created: 2018-11-13T06:53:01.159779201+01:00
     description: A Helm chart for Plone Stack
     digest: 906e23838541ac6d5c341530e881657856485d38b073da6f36aa8ecdcb4523f1
     maintainers:
@@ -81,7 +94,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "5.1"
-    created: 2018-11-07T06:48:30.665148026+01:00
+    created: 2018-11-13T06:53:01.15936634+01:00
     description: A Helm chart for Plone Stack
     digest: f02bff7313f689de72bea364e347c1663fa018d9d7dcc2f1a79007e4b384b1af
     maintainers:
@@ -94,7 +107,7 @@ entries:
     version: 0.1.20
   - apiVersion: v1
     appVersion: "5.1"
-    created: 2018-11-07T06:48:30.664589831+01:00
+    created: 2018-11-13T06:53:01.158950935+01:00
     description: A Helm chart for Plone Stack
     digest: 1f2e93395b01f06c608152ff184318708b7dd8436c83ac745186922569bd0c50
     maintainers:
@@ -107,7 +120,7 @@ entries:
     version: 0.1.19
   - apiVersion: v1
     appVersion: "5.1"
-    created: 2018-11-07T06:48:30.663956478+01:00
+    created: 2018-11-13T06:53:01.15856299+01:00
     description: A Helm chart for Plone Stack
     digest: fccbe15cacd837babcccadff74ebaa79de1007b406807007118e592769b29fff
     maintainers:
@@ -118,4 +131,4 @@ entries:
     urls:
     - https://sahlinet.github.io/plone-stack/helm/plone-stack-0.1.18.tgz
     version: 0.1.18
-generated: 2018-11-07T06:48:30.662628253+01:00
+generated: 2018-11-13T06:53:01.157845245+01:00
